@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps } from "@wordpress/block-editor"
 
 /**
  * The save function defines the way in which the different attributes should
@@ -16,9 +16,9 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {WPElement} Element to render.
  */
 export default function save() {
-	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Example Blocks2 – hello from the saved content!' }
-		</p>
-	);
+  return (
+    <p {...useBlockProps.save()}>
+      {"Example Blocks2 – hello from the saved content!"}
+    </p>
+  )
 }

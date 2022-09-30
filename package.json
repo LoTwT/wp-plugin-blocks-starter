@@ -1,20 +1,49 @@
 {
-	"name": "plugin-blocks",
-	"version": "0.1.0",
-	"description": "Example block scaffolded with Create Block tool.",
-	"author": "The WordPress Contributors",
-	"license": "GPL-2.0-or-later",
-	"main": "build/index.js",
-	"scripts": {
-		"build": "wp-scripts build",
-		"format": "wp-scripts format",
-		"lint:css": "wp-scripts lint-style",
-		"lint:js": "wp-scripts lint-js",
-		"packages-update": "wp-scripts packages-update",
-		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start"
-	},
-	"devDependencies": {
-		"@wordpress/scripts": "^24.2.0"
-	}
+  "name": "wp-plugin-blocks-starter",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.12.2",
+  "description": "A template to develop wordpress plugin blocks for gutenberg",
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "prettier": "prettier --write .",
+    "prepare": "simple-git-hooks",
+    "up": "taze latest -I"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoTwT/wp-plugin-blocks-starter.git"
+  },
+  "keywords": [
+    "wordpress",
+    "block theme",
+    "gutenberg",
+    "plugin blocks"
+  ],
+  "author": "LoTwT <709937065@qq.com>",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/LoTwT/wp-plugin-blocks-starter/issues"
+  },
+  "homepage": "https://github.com/LoTwT/wp-plugin-blocks-starter#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^24.2.0",
+    "lint-staged": "^13.0.3",
+    "pnpm": "^7.12.2",
+    "simple-git-hooks": "^2.8.0",
+    "taze": "^0.8.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --ignore-unknown"
+    ]
+  }
 }
