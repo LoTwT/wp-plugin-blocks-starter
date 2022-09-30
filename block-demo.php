@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Plugin Block
+ * Plugin Name:       Plugin Blocks
  * Description:       Example block scaffolded with Create Block tool.
  * Requires at least: 5.9
  * Requires PHP:      7.0
@@ -8,7 +8,7 @@
  * Author:            The WordPress Contributors
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       block-demo
+ * Text Domain:       plugin-blocks
  *
  * @package           plugin-blocks
  */
@@ -21,6 +21,10 @@
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function plugin_blocks_block_demo_block_init() {
-	register_block_type( __DIR__ . '/build' );
+	$blocks = glob( __DIR__ . '/build/*' );
+
+	foreach ( $blocks as $block ) {
+		register_block_type( $block );
+	}
 }
 add_action( 'init', 'plugin_blocks_block_demo_block_init' );
