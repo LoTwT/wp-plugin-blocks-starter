@@ -20,11 +20,11 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function plugin_blocks_block_demo_block_init() {
+function plugin_blocks_init() {
 	$blocks = glob( __DIR__ . '/build/*' );
 
 	foreach ( $blocks as $block ) {
 		register_block_type( $block );
 	}
 }
-add_action( 'init', 'plugin_blocks_block_demo_block_init' );
+add_action( 'init', 'plugin_blocks_init' );
