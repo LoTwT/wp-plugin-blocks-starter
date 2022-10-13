@@ -32,9 +32,9 @@
   },
   "homepage": "https://github.com/LoTwT/wp-plugin-blocks-starter#readme",
   "devDependencies": {
-    "@wordpress/scripts": "^24.2.0",
+    "@wordpress/scripts": "^24.3.0",
     "lint-staged": "^13.0.3",
-    "pnpm": "^7.12.2",
+    "pnpm": "^7.13.4",
     "simple-git-hooks": "^2.8.0",
     "taze": "^0.8.2"
   },
